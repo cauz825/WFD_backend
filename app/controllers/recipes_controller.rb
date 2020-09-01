@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+
+    before_action :logged_in?
     
     def index
         @recipes = Recipe.all
