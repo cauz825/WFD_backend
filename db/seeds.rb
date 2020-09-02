@@ -8,7 +8,7 @@ IngredientRecipe.destroy_all
     User.create(username: Faker::Name.name, password:"mike123")
 end
 
-User.create(username: "MCauz", password: "mike123")
+User.create(username: "MCauz", password: "mike825")
 
 5.times do
     Recipe.create(name: Faker::Food.dish)

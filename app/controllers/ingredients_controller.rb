@@ -6,5 +6,9 @@ class IngredientsController < ApplicationController
         @ingredients = Ingredient.all
         render json: @ingredients
     end
+
+    def create
+        @ingredient = Ingredient.create(params)
+    end
     
 end
