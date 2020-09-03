@@ -10,6 +10,14 @@ class UserIngredientsController < ApplicationController
         render json: @user_ingredient
     end
 
+    def destroy
+        @user_ingredient = UserIngredient.find_by(id: params[:id])
+        if @user_ingredient
+            @user_ingredient.destroy
+        end
+        render json: {success:"item deleted"}
+    end
+
     private
 
     def strong_params
