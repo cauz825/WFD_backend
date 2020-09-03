@@ -1,6 +1,5 @@
 class IngredientsController < ApplicationController
 
-    before_action :logged_in?
 
     def index
         @ingredients = Ingredient.all
@@ -8,7 +7,14 @@ class IngredientsController < ApplicationController
     end
 
     def create
-        @ingredient = Ingredient.create(params)
+        @ingredient = Ingredient.create(strong_params)
+        render json: @ingredient
+    end
+
+    private
+    
+    def strong_params
+        params.require(:ingredient).permit(:name)
     end
     
 end
