@@ -7,7 +7,10 @@ class IngredientsController < ApplicationController
     end
 
     def create
-        @ingredient = Ingredient.create(strong_params)
+        @ingredient = Ingredient.find_by(strong_params)
+        if !@ingredient
+            @ingredient = Ingredient.create(strong_params)
+        end
         render json: @ingredient
     end
 
