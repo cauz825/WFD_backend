@@ -45,3 +45,6 @@ gem 'faker'
 gem 'jwt', '~>2.2.2'
 
 gem 'dotenv'
+
+gem 'json'
+gem 'rest-client'
