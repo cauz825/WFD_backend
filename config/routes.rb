@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   post '/login', to: 'session#create'
   post '/recipe_call', to: 'api_calls#api_recipe_call'
+  post '/recipe_detail', to: 'api_calls#api_recipe_detail'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
